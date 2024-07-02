@@ -1,7 +1,20 @@
 <html>
 <body>
 <a href=https://aws.amazon.com/education/awseducate/ >https://aws.amazon.com/education/awseducate/</a>
-
 <a href=https://azure.microsoft.com/en-us/free/students >https://azure.microsoft.com/en-us/free/students</a>
+
+<h1>DNS</h1>
+<h2>Инструменти</h2>
+<ul>
+  <li>nslookup</li><li>dig</li><li>host</li>
+</ul>
+<h2>Задача</h2>
+Да се добави запис към host  файла (ime.p3), който да сочи към вашата локална машина (127.0.0.1)
+
+<h2>Задача</h2>
+Да се проверят MX записите за students.tugab.bg
+
+
+
 </body>
 </html>
