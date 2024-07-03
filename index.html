@@ -1,16 +1,15 @@
 <html>
-<body>
-<a href=https://aws.amazon.com/education/awseducate/ >https://aws.amazon.com/education/awseducate/</a><br />
-<a href=https://azure.microsoft.com/en-us/free/students >https://azure.microsoft.com/en-us/free/students</a>
-
-<h1>DNS</h1>
-<h2>Инструменти</h2>
-<ul>
-  <li>nslookup</li><li>dig</li><li>host</li>
-</ul>
-<h2>Задача</h2>
+  <head>
+    <meta title="some task" />
+  </head>
+  <body>
+    <a href=https://aws.amazon.com/education/awseducate/ >https://aws.amazon.com/education/awseducate/</a><br />
+    <a href=https://azure.microsoft.com/en-us/free/students >https://azure.microsoft.com/en-us/free/students</a>
+    <h1>DNS</h1>
+    <h2>Инструменти</h2>
+      <ul> <li>nslookup</li><li>dig</li><li>host</li></ul>
+    <h2>Задача</h2>
 Да се добави запис към host  файла (ime.p3), който да сочи към вашата локална машина (127.0.0.1)
-
 <h2>Задача</h2>
 Да се проверят MX, NS, A, TXT записите за students.tugab.bg
 
@@ -38,27 +37,14 @@
     <li>Създаване на Dockerfile със следното съдържание</li>
 <pre>FROM debian:latest
 RUN apt-get update
-RUN apt-get install -y \
-  dnsutils \
-  net-tools \
-  openssh-server \
-  telnet \
-  inetutils-ping \
-  vim \
-  nano \
-  less \
-  dnsutils \
-  tcpdump \
-  apache2 
-
+RUN apt-get install -y dnsutils net-tools \
+  openssh-server telnet inetutils-ping \
+  vim nano less dnsutils tcpdump apache2 
 LABEL version="1.1"
 LABEL description="none"
-
 EXPOSE 22
 EXPOSE 80/tcp
-
 COPY index.html /var/www/html/index.html
-
 CMD ["/usr/sbin/apachectl", "-D", "FOREGROUND"]</pre>
   </ul>
   <h2>Създаване на private repository в dockerhub</h2>
@@ -69,7 +55,8 @@ CMD ["/usr/sbin/apachectl", "-D", "FOREGROUND"]</pre>
   </li>
   <li>
     docker run -D -name container_name -p80:80 your_image_name
-  </li></ul>  
-</body>
+  </li></ul>
+    <h1>Ден 3</h1>
+      <h2></h2>
+  </body>
 </html>
-
