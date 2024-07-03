@@ -21,8 +21,11 @@
 команди ssh, nestat (проверка отворени портове)
   
   <h2>Домашно</h2>
-  <ul><li>Инсталиране docker и проверка инсталацията
-  </li><li>  
+  <ul><li>Инсталиране docker и проверка инсталацията, 
+  </li>
+    <li>Добавяне на локалния потребител група docker (sudo usermod -a -G docker user_name)
+    </li>
+    <li>  
   Конфигуриране връзка с ключ (без парола) към виртуалната машина
   </li>
    
@@ -52,15 +55,13 @@ RUN apt-get install -y \
   tcpdump \
   apache2 
 
-#mariadb-client php php-intl php-mbstring php-xml php-apcu php-curl php-mysql
-
 LABEL version="1.1"
-LABEL description="M&I"
+LABEL description="none"
 
 EXPOSE 22
 EXPOSE 80/tcp
 
-COPY index.html /var/www/html/index.php
+COPY index.html /var/www/html/index.html
 
 CMD ["/usr/sbin/apachectl", "-D", "FOREGROUND"]
      
