@@ -36,11 +36,7 @@
   <h2>Създаване на private repository в github</h2>
   <ul><li>Създаване на файл index.html с произволно съдържание</li>
     <li>Създаване на Dockerfile със следното съдържание</li>
-   <pre>
-FROM debian:latest
-
-#ENV SSH_AUTH_SOCK /ssh-agent
-
+<pre>FROM debian:latest
 RUN apt-get update
 RUN apt-get install -y \
   dnsutils \
@@ -63,9 +59,7 @@ EXPOSE 80/tcp
 
 COPY index.html /var/www/html/index.html
 
-CMD ["/usr/sbin/apachectl", "-D", "FOREGROUND"]
-     
-   </pre>
+CMD ["/usr/sbin/apachectl", "-D", "FOREGROUND"]</pre>
   </ul>
   <h2>Създаване на private repository в dockerhub</h2>
   <h2>Автентикация с токен</h2>
@@ -74,11 +68,8 @@ CMD ["/usr/sbin/apachectl", "-D", "FOREGROUND"]
     docker build -t your_image_name .
   </li>
   <li>
-    docker run -it -name container_name -p80:80 your_image_name
-  </li></ul>
-
-  
-  
+    docker run -D -name container_name -p80:80 your_image_name
+  </li></ul>  
 </body>
 </html>
 
