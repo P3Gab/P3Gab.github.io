@@ -69,7 +69,12 @@ CMD ["/usr/sbin/apachectl", "-D", "FOREGROUND"]
   <h2>Създаване на private repository в dockerhub</h2>
   <h2>Автентикация с токен</h2>
   <h2>Клониране на репо-то на виртуалната машина</h2>
-  
+  <ul><li>
+    docker build -t your_image_name .
+  </li>
+  <li>
+    docker run -it -name container_name -p80:80 your_image_name
+  </li></ul>
 
   
   
