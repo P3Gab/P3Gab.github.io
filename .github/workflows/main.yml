@@ -21,4 +21,4 @@ jobs:
           ssh-keyscan -p 20222 -H ilianko.com >> ~/.ssh/known_hosts
 
       - name: Deploy to Remote Server
-        run: ssh -p 20222 -i ~/.ssh/id_rsa ilianko@ilianko.com
+        run: scp -P 20222 -i ~/.ssh/id_rsa index.html ilianko@ilianko.com:~/
