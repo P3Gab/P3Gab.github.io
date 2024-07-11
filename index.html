@@ -82,6 +82,35 @@ CMD ["/usr/sbin/apachectl", "-D", "FOREGROUND"]</pre>
 <p>
     xxx.ef3.in <br />
   ilianko@hotmail.com
-</p> 
+</p>
+<p>
+  <pre>
+    name: SSH Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.temp123 }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H domain.name >> ~/.ssh/known_hosts
+
+      - name: Deploy to Remote Server
+        run: scp -i ~/.ssh/id_rsa index.html user@domain.name:~/
+  </pre>
+</p>
+    
   </body>
 </html>
